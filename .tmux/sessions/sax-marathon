@@ -1,0 +1,28 @@
+# START:new
+tmux new-session -s sax-marathon -n editor -d
+# END:new
+# START:cd
+tmux send-keys -t sax-marathon 'cd ~/Projects/ponies' C-m
+# END:cd
+# START:vim
+tmux send-keys -t sax-marathon 'vim' C-m
+# END:vim
+# START:hsplit
+tmux split-window -h -t sax-marathon
+# END:hsplit
+# re-select the main pain prior to setting the layout
+tmux select-pane -L -t sax-marathon
+# START:layout
+tmux select-layout -t sax-marathon even-horizontal
+# END:layout
+# START:keystopane
+tmux send-keys -t sax-marathon:1.2 'cd ~/Projects/ponies' C-m
+# END:keystopane
+# START:newwindow
+tmux new-window -n nREPL -t sax-marathon
+tmux send-keys -t sax-marathon:2 'cd ~/Projects/ponies' C-m
+# END:newwindow
+# START:selectwindow
+tmux select-window -t sax-marathon:1
+# END:selectwidow
+tmux attach -t sax-marathon
