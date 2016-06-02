@@ -23,15 +23,19 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
 Plugin 'scrooloose/syntastic'
 
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_always_populate_loc_list = 1
 
-" Look
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'" Look
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
@@ -82,7 +86,7 @@ call vundle#end()
 
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-default
+colorscheme base16-tomorrow
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -165,6 +169,9 @@ let maplocalleader = ","
 
 " General
 nnoremap Y y$
+set clipboard=unnamed
+map <C-N> :bnext<CR>
+command Bd bp\|bd \#
 
 " CtrlP
 nmap <leader>p :CtrlPBuffer<CR>
