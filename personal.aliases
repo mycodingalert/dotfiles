@@ -1,0 +1,2 @@
+alias tmate-session="tmate display -p '#{tmate_ssh}'"
+alias reset-camera="sudo killall VDCAssistant"
