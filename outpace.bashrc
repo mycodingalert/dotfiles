@@ -1,34 +1,9 @@
 export NGINX_URL=http://localhost:7999
 export NGINX_PUBLIC_URL=http://localhost:8080
-function test-refresh-forever() {
-  while [ 1 ]; do
-    lein test-refresh $@ 
-    sleep 10
-  done
-}
 
 #common.aliases stuff
 alias l='ls -lAF'
 alias ll='l'
-
-#alias g='git '
-#alias ga='git add .'
-#alias gst='git status'
-#alias gac='ga; git commit'
-#alias gca='git commit -a -v'
-#alias gco='git checkout'
-#alias gl='git pull'
-#alias glr='git pull --rebase'
-#alias gp='git push'
-#alias gf='git fetch'
-#alias gfa='git fetch --all'
-#alias gC='git commit -m'
-#alias glog='git log'
-#alias g-='git diff'
-##alias g-h='git diff HEAD'
-#alias git-curbranch='g?|grep "^# On branch "|cut -c 13-'
-#alias gM='git merge --no-ff'
-
 #end common.aliases stuff
 
 alias go_ftp='ssh ubuntu@54.200.128.164'
