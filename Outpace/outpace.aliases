@@ -1,0 +1,15 @@
+alias gout='cd ~/Projects/Outpace'
+alias go-oe2='gout && cd oe2'
+alias go-trek='gout && cd trek'
+alias go-te='gout && cd trek-events'
+alias tt=go-trek
+alias dauth='derp authenticate && source $(derp envfile)'
+alias source-customer='source $HOME/Projects/Outpace/.customerrc'
+alias source-oe2='source $HOME/Projects/Outpace/.starwoodoe2rc'
+alias source-stay='source $HOME/Projects/Outpace/.stayrc'
+alias source-guest='source $HOME/Projects/Outpace/.guestrc'
+alias source-trek='source $HOME/Projects/Outpace/.trekrc'
+alias tmux-customer=$HOME/.tmux/sessions/customer
+alias tmux-stay=$HOME/.tmux/sessions/stay
+alias tmslack=$HOME/Projects/Outpace/slackmate/tmslack
+alias dc=docker-compose

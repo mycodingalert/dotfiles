@@ -1,0 +1,4 @@
+export STARWOOD_HOME=$HOME/Projects/Outpace/starwood/starwood_oe2
+gr
+. Envfile
+

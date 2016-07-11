@@ -1,0 +1,4 @@
+export STARWOOD_HOME=$HOME/Projects/Outpace/starwood/starwood_stay
+gr
+. Envfile
+dauth
