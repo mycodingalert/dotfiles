@@ -31,21 +31,17 @@ let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_always_populate_loc_list = 1
 
 Plugin 'chriskempson/base16-vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'" Look
+let g:airline#extensions#tabline#fnamemod = ':t' " Look
 
 " Clojure
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
-"Plugin 'venantius/vim-cljfmt'
-"Plugin 'venantius/vim-eastwood'
-Plugin 'amdt/vim-niji'
-"Plugin 'luochen1990/rainbow'
-"let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-"Plugin 'vim-scripts/paredit.vim'
+Plugin 'vim-scripts/vim-niji'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 
@@ -86,7 +82,7 @@ call vundle#end()
 
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-tomorrow
+colorscheme base16-default-dark "base16-tomorrow
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''

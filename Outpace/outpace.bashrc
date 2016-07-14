@@ -10,6 +10,7 @@ alias go_ftp='ssh ubuntu@54.200.128.164'
 alias go_km='ssh ubuntu@172.31.25.28'
 
 alias emacsnw='TERM=xterm-256color emacs -nw'
+alias vim='/usr/local/Cellar/vim/7.4.1190/bin/vim'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -31,12 +32,13 @@ export ENVIRONMENT_NAME=localdev
 export EDITOR=vim
 export ANSIBLE_COW_SELECTION=random
 
-source /Users/rustybentley/Projects/Outpace/outpace.aliases
-source /Users/rustybentley/Projects/personal.aliases
-alias e=/Applications/Emacs.app/Contents/MacOS/Emacs
+OUTPACE_ALIASES="$HOME/Projects/dotfiles/Outpace/outpace.aliases"
+[[ -s $OUTPACE_ALIASES ]] && source $OUTPACE_ALIASES
+PERSONAL_ALIASES="$HOME/Projects/dotfiles/personal.aliases"
+[[ -s $PERSONAL_ALIASES ]] && source $PERSONAL_ALIASES
 
 # Base16 Shell
-BASE16_SHELL="$HOME/Projects/base16-shell/base16-atelierheath.dark.sh"
+BASE16_SHELL="$HOME/Projects/base16-shell/scripts/base16-default-dark.sh"
 [[ -s $BASE16_SHELL && -n "$ITERM_SESSION_ID" ]] && source $BASE16_SHELL
 
 if [[ -n $ENVIRONMENT_NAME || -n $SERVICE_NAME ]]; then
