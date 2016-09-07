@@ -10,7 +10,7 @@ alias go_ftp='ssh ubuntu@54.200.128.164'
 alias go_km='ssh ubuntu@172.31.25.28'
 
 alias emacsnw='TERM=xterm-256color emacs -nw'
-alias vim='/usr/local/Cellar/vim/7.4.1190/bin/vim'
+alias vim='/usr/local/Cellar/vim/7.4.2085/bin/vim'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -31,6 +31,8 @@ fi
 export ENVIRONMENT_NAME=localdev
 export EDITOR=vim
 export ANSIBLE_COW_SELECTION=random
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_NDK=$HOME/Library/Android/ndk_r10e
 
 OUTPACE_ALIASES="$HOME/Projects/dotfiles/Outpace/outpace.aliases"
 [[ -s $OUTPACE_ALIASES ]] && source $OUTPACE_ALIASES
@@ -45,9 +47,14 @@ if [[ -n $ENVIRONMENT_NAME || -n $SERVICE_NAME ]]; then
    export MACHINE_DESCRIPTION="$ENVIRONMENT_NAME $SERVICE_NAME:"
 fi
 
-PATH=/usr/local/sbin:/usr/local/bin:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/sbin:/usr/local/bin:$HOME/.rvm/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+eval "$(rbenv init -)"
 
 [ -s "/Users/rustybentley/.scm_breeze/scm_breeze.sh" ] && source "/Users/rustybentley/.scm_breeze/scm_breeze.sh"
 # override scm_breeze gr alias
 alias gr='cd $STARWOOD_HOME'
+
+# tell me something I don't know
+#fortune | cowsay
