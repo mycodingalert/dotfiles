@@ -56,5 +56,10 @@ eval "$(rbenv init -)"
 # override scm_breeze gr alias
 alias gr='cd $STARWOOD_HOME'
 
+# Whenever a command is executed, write it to a global history
+PROMPT_COMMAND="history -a ~/.bash_history.global; $PROMPT_COMMAND"
+# On C-r set HISTFILE and run hh
+bind -x '"\C-r": "HISTFILE=~/.bash_history.global hh"'
+
 # tell me something I don't know
 #fortune | cowsay

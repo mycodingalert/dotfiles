@@ -24,8 +24,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
+Plugin 'diepm/vim-rest-console'
 Plugin 'scrooloose/syntastic'
-
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_always_populate_loc_list = 1
