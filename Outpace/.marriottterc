@@ -1,0 +1,4 @@
+export STARWOOD_HOME=$HOME/Projects/Outpace/marriott/marriott-te # TODO: get rid of STARWOOD_HOME
+gr
+. Envfile
+

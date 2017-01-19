@@ -11,6 +11,7 @@ alias go_km='ssh ubuntu@172.31.25.28'
 
 alias emacsnw='TERM=xterm-256color emacs -nw'
 alias vim='/usr/local/Cellar/vim/7.4.2085/bin/vim'
+alias vi='vim'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
