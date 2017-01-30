@@ -2,3 +2,4 @@ export STARWOOD_HOME=$HOME/Projects/Outpace/starwood/starwood_stay
 gr
 . Envfile
 dauth
+alias ssh-stay='ssh -A outpace@172.31.4.73'
