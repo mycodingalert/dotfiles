@@ -1,14 +1,7 @@
-alias gout='cd ~/Projects/Outpace'
-alias go-oe2='gout && cd oe2'
-alias go-trek='gout && cd trek'
-alias go-te='gout && cd trek-events'
-alias tt=go-trek
-alias dauth='derp authenticate && source $(derp envfile)'
 alias customer='source $HOME/Projects/dotfiles/Outpace/.customerrc'
 alias sw='source $HOME/Projects/dotfiles/Outpace/.starwoodoe2rc'
 alias mt='source $HOME/Projects/dotfiles/Outpace/.marriottterc'
 alias stay='source $HOME/Projects/dotfiles/Outpace/.stayrc'
-alias source-guest='source $HOME/Projects/dotfiles/Outpace/.guestrc'
-alias source-trek='source $HOME/Projects/dotfiles/Outpace/.trekrc'
 alias tmslack=$HOME/Projects/Outpace/slackmate/tmslack
 alias dc=docker-compose
+alias connect-db='~/connect-db'

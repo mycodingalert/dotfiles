@@ -32,6 +32,7 @@ let g:syntastic_always_populate_loc_list = 1
 Plugin 'qpkorr/vim-bufkill'
 
 Plugin 'chriskempson/base16-vim'
+Plugin 'hzchirs/vim-material'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Enable the list of buffers
@@ -85,14 +86,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 """ Look and Feel
-
 set background=dark
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-default-dark "base16-tomorrow
+"colorscheme base16-default
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='base16'
+let g:airline_theme='molokai'
 
 if has("gui_running")
   set guioptions-=T " Remove toolbar
@@ -195,3 +195,11 @@ nmap <Leader>F <Plug>FireplacePrint<Plug>(sexp_outer_top_list)``
 nmap <Leader>f <Plug>FireplacePrint<Plug>(sexp_outer_list)``
 nmap <Leader>e <Plug>FireplacePrint<Plug>(sexp_inner_element)``
 nmap <Leader>E :%Eval<CR>
+
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
