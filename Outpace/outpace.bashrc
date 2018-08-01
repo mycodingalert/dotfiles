@@ -52,4 +52,5 @@ alias gr='cd $STARWOOD_HOME'
 # Whenever a command is executed, write it to a global history
 PROMPT_COMMAND="history -a ~/.bash_history.global; $PROMPT_COMMAND"
 # On C-r set HISTFILE and run hh
+export HH_CONFIG=hicolor
 bind -x '"\C-r": "HISTFILE=~/.bash_history.global hh"'
