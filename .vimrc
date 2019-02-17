@@ -147,9 +147,13 @@ set smarttab
 set expandtab
 set formatoptions-=t
 
-set textwidth=80
+set textwidth=0
 set shiftwidth=2
 set tabstop=2
+
+" Line folding
+"set foldmethod=indent
+"set foldlevel=00
 
 au FileType java setl sw=4 ts=4
 au FileType sml setl sw=4 ts=4

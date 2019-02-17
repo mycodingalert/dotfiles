@@ -6,8 +6,6 @@ alias go_km='ssh ubuntu@172.31.25.28'
 alias emacsnw='TERM=xterm-256color emacs -nw'
 alias vi='vim'
 
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
 complete -C aws_completer aws
 
 if [ -e $HOME/.outpace/bashrc ]; then
@@ -21,6 +19,7 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Solarized
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
+alias gcmb="git branch --merged | grep -Ev '(^\*|master)' | xargs git branch -d"
 
 export ENVIRONMENT_NAME=localdev
 export EDITOR=vim
@@ -39,18 +38,19 @@ if [[ -n $ENVIRONMENT_NAME || -n $SERVICE_NAME ]]; then
   export MACHINE_DESCRIPTION="$ENVIRONMENT_NAME $SERVICE_NAME:"
 fi
 
-PATH=$PATH:/usr/local/sbin:/usr/local/bin:$HOME/.rvm/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+PATH=$PATH:/usr/local/sbin:/usr/local/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/lib/ruby/gems/2.5.0/bin
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-# is rbenv what's slowing me down?
-eval "$(rbenv init -)"
+PATH="/usr/local/bin/aws:$PATH"
 
 [ -s "/Users/rustybentley/.scm_breeze/scm_breeze.sh" ] && source "/Users/rustybentley/.scm_breeze/scm_breeze.sh"
 # override scm_breeze gr alias
-alias gr='cd $STARWOOD_HOME'
+alias gr='cd $PROJECT_HOME'
 
 # Whenever a command is executed, write it to a global history
 PROMPT_COMMAND="history -a ~/.bash_history.global; $PROMPT_COMMAND"
 # On C-r set HISTFILE and run hh
 export HH_CONFIG=hicolor
 bind -x '"\C-r": "HISTFILE=~/.bash_history.global hh"'
+
+# vi bindings in the shell!
+set -o vi

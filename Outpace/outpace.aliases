@@ -1,7 +1,2 @@
-alias customer='source $HOME/Projects/dotfiles/Outpace/.customerrc'
-alias sw='source $HOME/Projects/dotfiles/Outpace/.starwoodoe2rc'
 alias mt='source $HOME/Projects/dotfiles/Outpace/.marriottterc'
-alias stay='source $HOME/Projects/dotfiles/Outpace/.stayrc'
-alias tmslack=$HOME/Projects/Outpace/slackmate/tmslack
 alias dc=docker-compose
-alias connect-db='~/connect-db'
