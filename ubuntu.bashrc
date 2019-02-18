@@ -133,7 +133,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 
 export ENVIRONMENT_NAME=localdev
 export EDITOR=vim
-alias vpn='openvpn --config .config/client.ovpn --auth-user-pass --auth-retry interact'
+alias vpn='sudo openvpn --config .config/client.ovpn --auth-user-pass --auth-retry interact'
 if [[ -n $ENVIRONMENT_NAME || -n $SERVICE_NAME ]]; then
    export MACHINE_DESCRIPTION="$ENVIRONMENT_NAME $SERVICE_NAME:"
 fi
