@@ -87,8 +87,6 @@ call vundle#end()
 
 """ Look and Feel
 set background=dark
-let base16colorspace=256  " Access colors present in 256 colorspace
-"colorscheme base16-default
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''

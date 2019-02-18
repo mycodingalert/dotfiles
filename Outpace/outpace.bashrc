@@ -2,8 +2,6 @@ set background=dark
 
 alias l='ls -lAF'
 alias ll='l'
-alias go_km='ssh ubuntu@172.31.25.28'
-alias emacsnw='TERM=xterm-256color emacs -nw'
 alias vi='vim'
 
 complete -C aws_completer aws
