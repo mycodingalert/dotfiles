@@ -147,4 +147,3 @@ PERSONAL_ALIASES="$HOME/Projects/dotfiles/personal.aliases"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
