@@ -137,10 +137,14 @@ PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 [ -s "/home/rusty/.scm_breeze/scm_breeze.sh" ] && source "/home/rusty/.scm_breeze/scm_breeze.sh"
 
+OUTPACE_ALIASES="$HOME/Projects/dotfiles/Outpace/outpace.aliases"
+[[ -s $OUTPACE_ALIASES ]] && source $OUTPACE_ALIASES
+PERSONAL_ALIASES="$HOME/Projects/dotfiles/personal.aliases"
+[[ -s $PERSONAL_ALIASES ]] && source $PERSONAL_ALIASES
+
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-alias dc='docker-compose'
 
