@@ -123,8 +123,10 @@ fi
 #TODO
 #complete -C aws_completer aws
 
-GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+  GIT_PROMPT_ONLY_IN_REPO=1
+  source $HOME/.bash-git-prompt/gitprompt.sh
+fi
 
 export ENVIRONMENT_NAME=localdev
 export EDITOR=vim
