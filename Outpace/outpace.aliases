@@ -1,3 +1,4 @@
 alias gr='cd $PROJECT_HOME'
 alias mt='source $HOME/Projects/dotfiles/Outpace/.marriottterc'
+alias ta='source $HOME/Projects/dotfiles/Outpace/.toursactivitiesrc'
 alias dc=docker-compose
