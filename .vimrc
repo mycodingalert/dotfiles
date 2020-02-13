@@ -173,7 +173,7 @@ let maplocalleader = ","
 
 " General
 nnoremap Y y$
-set clipboard=unnamed
+set clipboard=unnamedplus
 map <C-N> :bnext<CR>
 command Bd bp\|bd \#
 
