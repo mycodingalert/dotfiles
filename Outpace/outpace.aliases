@@ -1,4 +1,10 @@
 alias gr='cd $PROJECT_HOME'
 alias mt='source $HOME/Projects/dotfiles/Outpace/.marriottterc'
 alias ta='source $HOME/Projects/dotfiles/Outpace/.toursactivitiesrc'
+alias lu='source $HOME/Projects/dotfiles/Outpace/.lumanurc'
+alias lu-db='lu && ./bin/db-tunnel dev-rusty'
+alias lu-server='lu && cd ic && lein ring server'
+alias lu-ui='lu && ./bin/tmux-all-the-things'
+alias lu-ngrok='ngrok http 3000 -subdomain=test-lumanu -host-header=local.socialcert.me'
+alias mu='source $HOME/Projects/dotfiles/Outpace/.markuprc'
 alias dc=docker-compose
