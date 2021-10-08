@@ -166,3 +166,8 @@ alias tmux-local='tmux attach-session -t tmux-local || tmux new -s tmux-local'
 # <<< conda initialize <<<
 
 alias airfl='cd $HOME/Projects/Outpace/operations/airflow/local_airflow && source Envfile && source local_airflow/bin/activate'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

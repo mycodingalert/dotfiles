@@ -1,2 +1,0 @@
-export STARWOOD_HOME=$HOME/Projects/Outpace/starwood/starwood_customer/universe
-source $STARWOOD_HOME/common_utilities/setup/personalization/common.aliases
