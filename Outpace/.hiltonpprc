@@ -1,4 +1,0 @@
-export PROJECT_HOME=$HOME/Projects/Outpace/hilton/hilton_product_platform
-gr
-. Envfile
-
