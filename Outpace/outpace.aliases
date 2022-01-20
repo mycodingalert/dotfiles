@@ -1,6 +1,7 @@
 alias gr='cd $PROJECT_HOME'
 alias mt='source $HOME/Projects/dotfiles/Outpace/.marriottterc'
 alias hpp='source $HOME/Projects/dotfiles/Outpace/.hibiscuspprc'
+alias opd='source $HOME/Projects/dotfiles/Outpace/.outpacepdrc'
 alias lu='source $HOME/Projects/dotfiles/Outpace/.lumanurc'
 alias lu-db='lu && ./bin/db-tunnel dev-rusty'
 alias lu-server='lu && cd ic && lein ring server'
