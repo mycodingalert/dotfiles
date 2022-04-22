@@ -1,0 +1,4 @@
+export PROJECT_HOME=$HOME/Projects/Outpace/rezdy/rezdy-poc
+. $HOME/Projects/dotfiles/Outpace/.outpacepdrc
+gr
+. .envrc

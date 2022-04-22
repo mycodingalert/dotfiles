@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+source_profile=${1:-outpace-dev-environment}
+destination_profile=${2:-starwood}
+SESSION_LENGTH=43200
+
+token_expired() {
+  local token_expired=0
+  local session_expiration=$(aws configure get $destination_profile.aws_session_expiration)
+
+  if [[ -n "$session_expiration" ]]; then
+    local millis=$(date -juf "%Y-%m-%dT%H:%M:%SZ" "$session_expiration" +%s 2>/dev/null)$(date -juf "%Y-%m-%dT%H:%M:%S+00:00" "$session_expiration" +%s 2>/dev/null)$(date -d "$session_expiration" +'%s' 2>/dev/null)
+    local now=$(date +'%s')
+
+    if [[ -n $millis ]] && (( now < millis )); then
+      token_expired=1
+    fi
+  fi
+
+  return $token_expired
+}
+
+get_mfa_token() {
+  local mfa_token
+  if [[ -n "$(which pass)" ]] && [[ -n "$MARRIOTT_PASS_OTP_PATH" ]]; then
+    pass otp $MARRIOTT_PASS_OTP_PATH
+  else
+    read -p "Enter MFA token for $source_profile: " mfa_token
+
+    echo "$mfa_token"
+  fi
+}
+
+get_session() {
+  local region=$(aws --profile $source_profile configure get region)
+  if [[ -z "$region" ]]; then
+    echo "Could not find region for $source_profile" 1>&2
+    return 1
+  fi
+
+  local mfa_device=$(aws --profile $source_profile configure get mfa_serial)
+  if [[ -z "$mfa_device" ]]; then
+    echo "Could not find MFA device for $source_profile" 1>&2
+    return 1
+  fi
+
+  local mfa_token=$(get_mfa_token)
+  if [[ -z "$mfa_token" ]]; then
+    echo "No MFA token provided!" 1>&2
+    return 1
+  fi
+
+  local -a session_info=($(aws sts get-session-token \
+    --profile "$source_profile" \
+    --duration-seconds "$SESSION_LENGTH" \
+    --serial-number "$mfa_device" \
+    --token-code "$mfa_token" \
+    --output text \
+    --query "Credentials"))
+
+  aws configure --profile $destination_profile set output json &&
+    aws configure --profile $destination_profile set region "$region" &&
+    aws configure --profile $destination_profile set aws_access_key_id "${session_info[0]}" &&
+    aws configure --profile $destination_profile set aws_session_expiration "${session_info[1]}" &&
+    aws configure --profile $destination_profile set aws_secret_access_key "${session_info[2]}" &&
+    aws configure --profile $destination_profile set aws_session_token "${session_info[3]}"
+}
+
+die() {
+  echo "$@" 1>&2
+  exit 1
+}
+
+main() {
+  if token_expired; then
+    get_session
+  fi
+  return 0
+}
+
+main

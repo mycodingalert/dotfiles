@@ -1,4 +1,4 @@
-~/Projects/Outpace/marriott/marriott-te/bin/aws-session outpace-product-dev outpace-product-dev-mfa
+~/Projects/dotfiles/Outpace/bin/aws-session outpace-product-dev outpace-product-dev-mfa
 export AWS_PROFILE=outpace-product-dev-mfa
 aws s3 ls s3:// | grep outpace-maven-repo
 echo 'Above line should contain outpace-maven-repo, else you are using an incorrect AWS profile...'
